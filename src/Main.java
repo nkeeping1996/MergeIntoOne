@@ -1,10 +1,10 @@
 public class Main {
     public static void main(String[] args) {
 
-        int[] nums1 = {1,4,5,0,0,0};
+        int[] nums1 = {1,4,5,0,0,0,0};
         int m = 3;
-        int[] nums2 = {2,3,7};
-        int n = 3;
+        int[] nums2 = {2,3,7,8};
+        int n = 4;
 
         merge(nums1, m, nums2, n);
         for(int i : nums1){
@@ -16,7 +16,7 @@ public class Main {
         int i = 0;
         int j = 0;
 
-        while(j < n-1){
+        while(j < n-1 && i<m){
             if(nums2[j] < nums1[i]){
                 for(int k = nums1.length-1; k > i; k--){
                     nums1[k] = nums1[k-1];
@@ -28,9 +28,9 @@ public class Main {
                 i++;
             }
         }
-//        if(j<nums2.length){
-//            nums1[i++]=nums2[j++];
-//        }
-
+        int index = m+(n-j);
+        while(j<nums2.length){
+            nums1[index++]=nums2[j++];
+        }
     }
 }
