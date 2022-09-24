@@ -1,13 +1,25 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        int[] nums1 = {1,2,5,0,0};
+        int m = 3;
+        int[] nums2 = {3,7};
+        int n = 2;
+
+        merge(nums1, m, nums2, n);
+
+        System.out.println("Starting");
+        for(int i : nums1){
+            System.out.println(i);
+        }
+        System.out.println("Done!");
     }
 
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
+    public static void merge(int[] nums1, int m, int[] nums2, int n) {
         int i = 0;
         int j = 0;
 
-        while(i < m || j < n){
+        while(j < n-1){
             if(nums2[j] < nums1[i]){
                 for(int k = i+1; k < nums1.length-1; k++){
                     nums1[k] = nums1[k+1];
